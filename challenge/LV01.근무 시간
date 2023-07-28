@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+
+public class Main {
+    public static void main(String[] args) {
+        int totTime = 0;
+
+        Scanner sc = new Scanner(System.in);
+
+        for(int i=0; i<5; i++){
+            String startTime = sc.next();
+            String endTime = sc.next();
+
+            int startH = Integer.parseInt(startTime.substring(0, 2));
+            int startM = Integer.parseInt(startTime.substring(3, 5));
+            int endH = Integer.parseInt(endTime.substring(0, 2));
+            int endM = Integer.parseInt(endTime.substring(3, 5));
+
+            totTime += (endH-startH-1)*60 + (60-startM) + endM;
+        }
+        System.out.println(totTime);
+    }
+}
